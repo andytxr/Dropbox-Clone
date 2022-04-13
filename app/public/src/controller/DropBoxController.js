@@ -20,8 +20,7 @@ class DropBoxController {
 
         this.inputFilesEl.addEventListener('change', event =>{
 
-            console.log(event.target.files);
-            this.uploadTasks(files);
+            this.uploadTasks(event.target.files);
 
             this.snackModalEl.style.display='block';
 
