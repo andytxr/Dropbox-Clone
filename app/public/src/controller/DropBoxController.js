@@ -51,6 +51,68 @@ class DropBoxController {
 
     }
 
+    initEventLi(li){
+
+        li.addEventListener('click', e =>{
+
+            if(e.shiftKey){
+
+                let firstLi=this.listFilesEl.querySelector('.selected');
+                if(firstLi){
+
+                    let iStart;
+                    let iEnd;
+                    let list = li.parentElement.childNodes;
+
+                    list.forEach((el, index)=>{
+
+                        if(firstLi===el){
+
+                            iStart=index;
+
+
+                        }
+                        if(li===el){
+
+                            iEnd=index;
+
+                        }
+
+                    });
+
+                    let i=[iStart,iEnd].sort();
+
+                    list.forEach((el,index)=>{
+
+                        if(index>=i[0] && index<=i[1]){
+                            el.classList.add('selected')
+                        }
+
+                    });
+
+                    return true;
+
+                }
+                
+
+            }
+            
+            if(!e.ctrlKey){
+
+                this.listFilesEl.querySelectorAll('li.selectd').forEach(el=>{
+
+                    el.classList.remove('selected');
+
+                })
+
+            }
+
+            li.classList.toggle('selected');
+
+        });
+
+    }
+
     //Configuração do Firebase
 
     firebaseConfig(){
@@ -277,7 +339,10 @@ class DropBoxController {
             <div class="name text-center">${file.originalFilename}</div>
         `;
 
+        this.initEventLi(li);
+
         return li;
+
     }
 
     //Funcionalidade de Upload
