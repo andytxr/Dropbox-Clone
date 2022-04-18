@@ -135,10 +135,10 @@ class DropBoxController {
 
     initEventLi(li){
 
-        li.addeventListener('dblclick', e=>{
+        li.addEventListener('dblclick', e=>{
 
             let file = JSON.parse(li.dataset.file);
-            if(file.type==='folder'){
+            if(file.mimetype==='folder'){
 
               this.currentFolder.push(file.originalFilename);     
               this.openFolder()         
@@ -314,6 +314,7 @@ class DropBoxController {
         if(this.lastFolder){
 
           this.getFirebaseRef(this.lastFolder).off('value');
+
         }
         this.readFiles();
 
