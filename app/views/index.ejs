@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -176,6 +175,7 @@
                         </div>
                     </div>
                 </header>
+
                 <section id="content-section">
                     <div class="row">
                         <div class="col-md-9">
@@ -185,8 +185,8 @@
                             <button id="btn-send-file" type="button" class="btn btn-primary btn-block btn-sm">Enviar arquivos</button>
                             <input type="file" id="files" style="display:none;" multiple>
                             <button id="btn-new-folder" type="button" class="btn btn-link btn-block btn-sm btn-icon"><i class="ion-android-folder-open"></i>Nova Pasta</button>
-                            <button style="display:none;" id="btn-rename" type="button" class="btn btn-link btn-block btn-sm btn-icon"><i class="ion-edit"></i>Renomear</button>
-                            <button style="display:none;" id="btn-delete" type="button" class="btn btn-link btn-block btn-sm btn-icon"><i class="ion-trash-a"></i>Excluir</button>
+                            <button style="display: none;" id="btn-rename" type="button" class="btn btn-link btn-block btn-sm btn-icon"><i class="ion-edit"></i>Renomear</button>
+                            <button style="display: none;" id="btn-delete" type="button" class="btn btn-link btn-block btn-sm btn-icon"><i class="ion-trash-a"></i>Excluir</button>
                         </div>
                     </div>
                 </section>
@@ -195,7 +195,7 @@
         </div>
     </div>
 
-    <div id="react-snackbar-root" style="display:none">
+    <div id="react-snackbar-root" style="display: none">
         <div data-reactroot="" class="mc-snackbar-holder-backdrop">
             <div class="mc-snackbar">
                 <div class="mc-snackbar-container mc-snackbar-container--snackbar-icon">
@@ -214,10 +214,8 @@
             </div>
         </div>
     </div>
-
-    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script src="src/controller/DropBoxController.js"></script>
     <script src="src/index.js"></script>
 </body>
-
 </html>
