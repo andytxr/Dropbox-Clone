@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var formidable = require('formidable');
-
+var fs = require('fs')
 
 
 /* GET home page. */
@@ -19,6 +19,33 @@ route.delete('/file',(req, res)=>{
   })
 
   form.parse(req, (err,fields,files)=>{
+
+    let path = './' + fields.path;
+    if(fs.existsSync(path)){
+
+      fs.unlink(path,err=>{
+
+        if(err){
+
+          res.status(400).json({
+
+            err
+
+          });
+
+        }else{
+
+          res.json({
+
+            fields
+
+          });
+
+        }
+
+      });
+
+    }
 
     res.json({
       files
