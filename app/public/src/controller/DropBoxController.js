@@ -660,7 +660,7 @@ class DropBoxController {
         
                         if (data.type === 'folder') {
         
-                            this.removeFolderTask(ref + '/' + name, data.name).then(() => {
+                            this.removeFolderTask(ref + '/' + name, data.originalFilename).then(() => {
         
                                 resolve({
                                     fields: {
@@ -674,7 +674,7 @@ class DropBoxController {
         
                         } else if (data.type) {
         
-                            this.removeFile(ref + '/' + name, data.name).then(() => {
+                            this.removeFile(ref + '/' + name, data.originalFilename).then(() => {
         
                                 resolve({
                                     fields: {
